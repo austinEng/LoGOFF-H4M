@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/events', require('./routes/events.js'));
+app.use('/users', require('./routes/users.js'));
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/logoff', function(err) {
   if(!err) {
