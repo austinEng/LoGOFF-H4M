@@ -7,6 +7,13 @@
 
 	"content_scripts": [{
 		"js": ["script/jquery.js", "inject.js"],
-		"matches": ["http://welogoff.com/"]
-	}]
+		"css": ["style/main.css"],
+		"matches": ["http://welogoff.com/*"]
+	}],
+
+	"web_accessible_resources": [
+		"views/*",
+		"style/*",
+		"script/*"
+	]
 }
