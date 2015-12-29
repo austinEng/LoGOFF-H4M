@@ -15,14 +15,10 @@ router.get('/', function (req, res) {
 });
 
 router.get('/:event', function (req, res) {
-	console.log(1);
 	res.setHeader('Content-Type', 'application/json');
 	Event.find({
 		title: req.params.event
 	}, function (err, obj) {
-		console.log(2);
-		console.log(err);
-		console.log(obj);
 		if (err) { console.log(err); }
 		if (obj && obj.length > 0) {
 			return res.send(JSON.stringify(obj));
