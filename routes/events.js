@@ -9,24 +9,47 @@ var User = require('../models/user.js');
 module.exports = router;
 
 router.get('/', function (req, res) {
-	res.setHeader('Content-Type', 'application/json');
-	Event.find({}, function (err, events) {
-		if (err) { console.log(err); }
-		return res.send(JSON.stringify(events));	
-	});
+	if (req.session && req.session.user) {
+		Event.find({
+			_id: {$in: req.session.user.events}
+		}, function (err, events) {
+			if (err) { console.log(err); }
+			return res.send(JSON.stringify(events));
+		});
+	} else {
+		console.log("No user available");
+	}
 });
 
-router.get('/:_id', function (req, res) {
-	res.setHeader('Content-Type', 'application/json');
+router.get('/view/:_id', function (req, res) {
 	Event.findOne({_id: req.params._id}, function (err, ev) {
 		return res.send(JSON.stringify(ev));
 	});
 });
 
+router.get('/feed', function (req, res) {
+	var ids = req.query.ids.split(',');
+
+	var query = User.find({});
+	query.where('userid').in(ids);
+	query.exec(function (err, users) {
+		if (err) console.log(err);
+		var uids = []
+		for (var i = 0; i < users.length; i++) {
+			uids.push(users[i]._id);
+		}
+		query = Event.find({});
+		query.where('creator').in(uids);
+		query.exec(function (err, events) {
+			if (err) console.log(err);
+			return res.send(JSON.stringify(events));
+		});
+	});
+});
+
 router.post('/create', function (req, res) {
-	res.setHeader('Content-Type', 'application/json');
 	if (req.session && req.session.user) {
-		req.session.user.events.create({
+		Event.create({
 			title: req.body.title,
 			attendees: [req.session.user._id],
 			datetime: req.body.datetime,
@@ -34,8 +57,11 @@ router.post('/create', function (req, res) {
 			description: req.body.description,
 			tags: req.body.tags
 		}, function (err, ev) {
-			if (err) console.log(err);
-			return res.send(JSON.stringify(ev));
+			req.session.user.events.push(ev._id);
+			req.session.user.save(function (err) {
+				if (err) console.log(err);
+				return res.send(JSON.stringify(ev));
+			});
 		});
 	} else {
 		console.log("No user available");
@@ -43,7 +69,6 @@ router.post('/create', function (req, res) {
 });
 
 router.post('/update', function (req, res) {
-	res.setHeader('Content-Type', 'application/json');
 	/*Event.findOneAndUpdate({_id: req.query._id}, req.body, {upsert: true}, function (err, ev) {
 		if (err) console.log(err);
 		return res.send(ev);
@@ -70,7 +95,6 @@ router.post('/update', function (req, res) {
 });
 
 router.post('/delete', function (req, res) {
-	res.setHeader('Content-Type', 'application/json');
 	/*Event.remove({_id: req.query._id}, function(err) {
 		if (err) {
 			console.log(err);
