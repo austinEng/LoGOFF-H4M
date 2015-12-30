@@ -20,17 +20,51 @@
 }
 
 #invite-button {
-	background-color: purple;
+	background-color: grey;
 	text-align: center;
 	margin-right: 
 }
 
 #event-date{
 	display: inline-block;
-	padding: 0px, 100px;
+	padding-right: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 #event-time{
 	display: inline-block;
-	padding: 0px, 100px;
+	padding-right: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#event-attendees{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#event-description{
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+#event-discussion-title{
+	text-align: center;
+	font-weight: bold;
+}
+
+#event-discussion{
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#event-description-about{
+
+}
+
+#event-tags{
+	padding-bottom: 5px;
 }
