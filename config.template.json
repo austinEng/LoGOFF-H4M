@@ -1,3 +1,5 @@
 {
-  "cookie_secret": ""
+  "setup": {
+  	"cookie_secret": ""
+  }
 }

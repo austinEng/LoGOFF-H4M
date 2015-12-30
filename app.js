@@ -18,7 +18,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({secret: config.cookie_secret, saveUninitialized: true, resave: true}));
+console.log(config.cookie_secret);
+app.use(session({secret: config.setup.cookie_secret, saveUninitialized: true, resave: true}));
+
+app.use(function(req, res, next) {
+	res.setHeader('Content-Type', 'application/json');
+ 	res.header("Access-Control-Allow-Origin", "*");
+ 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+ 	next();
+});
 
 app.use('/events', require('./routes/events.js'));
 app.use('/users', require('./routes/users.js'));

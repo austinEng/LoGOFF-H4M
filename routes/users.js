@@ -19,9 +19,8 @@ module.exports = router;
 
 // req.query.userid  -  The user's id from LoGOFF server
 router.post('/setCurrent', function (req, res) {
-	res.setHeader('Content-Type', 'application/json');
 	User.findOrCreate({
-		userid: req.query.userid
+		userid: req.body.userid
 	}, function (err, user) {
 		if (err) {console.log(err);}
 		if (user) {
