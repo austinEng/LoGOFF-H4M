@@ -7,7 +7,8 @@ var DiscussionSchema = new mongoose.Schema({
 	content: {
 		type: String,
 		required: true
-	}
+	},
+	author: mongoose.Schema.ObjectId
 });
 
 DiscussionSchema.belongsTo('User', {through: 'author'});

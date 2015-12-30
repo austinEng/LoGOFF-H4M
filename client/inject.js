@@ -29,24 +29,41 @@ function loadPage(id) {
 	$(".content").load(chrome.extension.getURL("views/" + page + ".html"));
 }
 
-
 $(document).ready(function() {
-	var homeBtn = $('.nav > a')[0];
-	var el = $("<a href='#event-feed' class='h4m-link'> \
-		<div class='event-btn'> \
-		<img  /> \
-		</div> \
-		</a>");
-	el.insertAfter(homeBtn);
-	/*el.click(function() {
-		loadPage($(this).attr('href'));
-	});*/
-
-	if (window.location.hash) {
-		loadPage(window.location.hash);
-	}
+	
 });
 
 $("body").on("click", ".h4m-link", function(){
 	loadPage($(this).attr('href'));
 });
+
+$.ajax({
+	type: 'POST',
+	url: 'http://welogoff.com/Home/getProfileId',
+	success: function(userid) {
+		$.ajax({
+			type: 'POST',
+			crossDomain: true,
+			url: 'https://logoff-h4m.herokuapp.com/users/setCurrent',
+			data: {
+				userid: userid
+			},
+			success: function(user) {
+				console.log(user);
+			},
+			dataType: 'json'
+		});
+	}
+})
+
+if (window.location.hash) {
+	loadPage(window.location.hash);
+}
+
+var homeBtn = $('.nav > a')[0];
+var el = $("<a href='#event-feed' class='h4m-link'> \
+	<div class='event-btn'> \
+	<img  /> \
+	</div> \
+	</a>");
+el.insertAfter(homeBtn);
