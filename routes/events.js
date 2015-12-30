@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
 	}
 });
 
-router.get('/view/:_id', function (req, res) {
+router.get('/get/:_id', function (req, res) {
 	Event.findOne({_id: req.params._id}, function (err, ev) {
 		return res.send(JSON.stringify(ev));
 	});
@@ -52,6 +52,7 @@ router.post('/create', function (req, res) {
 	if (req.session && req.session.user) {
 		Event.create({
 			title: req.body.title,
+			creator: req.session.user._id,
 			attendees: [req.session.user._id],
 			datetime: req.body.datetime,
 			location: req.body.location,
