@@ -1,0 +1,99 @@
+#event-header {
+	background-color: white;
+    padding: 20px;
+    min-height: 85px;
+}
+
+#event-about{
+	background-color: white;
+    padding: 20px;
+}
+
+#event-image {
+	width: 80px;
+    float: left;
+    margin-right: 15px;
+}
+
+#event-image img {
+	width: 100%;
+}
+
+#event-title {
+	font-size: 30px;
+    font-weight: bold;
+}
+
+#invite-button {
+	background-color: none;
+	text-align: center;
+	padding-top: 10px;
+}
+
+#event-date{
+	display: inline-block;
+	padding-right: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#event-time{
+	display: inline-block;
+	padding-right: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#event-attendees{
+	background-color: none;
+	text-align: center;
+}
+
+#event-description{
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+#event-discussion-title{
+	text-align: center;
+	font-weight: bold;
+}
+
+#event-discussion{
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+}
+
+#event-description-join{
+	color: #6F9692;
+}
+
+#event-tags{
+	padding-bottom: 5px;
+}
+
+#event-bar{
+	color: #00A55E;
+	background-color: #00A55E;
+	height: 10px;
+	font-size: 1px;
+}
+
+input[type="button"] {
+  font-size: 16px;
+  background-color: #00A55E;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+#in-bar{
+	color: #BBBDC0;
+	background-color: #BBBDC0;
+	height: 10px;
+	font-size: 1px;
+}
+
+

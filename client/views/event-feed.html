@@ -1,0 +1,91 @@
+<div class="new-post">
+ <!--new prayer block-->
+                <div class="green-line"></div>
+
+                <img class="display-pic" src="images/display-image.svg" alt="display image" />
+                <img class="uni" src="images/universal-active.svg" alt="universal icon" />
+
+                <div class="new-post-btn">
+                    <h2>CREATE EVENT</h2>
+                    <img src="images/prayer-icon.svg" alt="prayer icon" />
+                </div>
+
+                <div class="wrapper">
+
+                    <img class="cancel-post" src="images/cancel-icon-grey.svg" alt="cancel post" />
+
+                    <p><span></span> <span>writes:</span></p>
+                    <div class="character-counter"><span>19</span>/160</div>
+                    <form>
+                        <textarea id="text" class="prayer-message-box" maxlength="160" style="-webkit-user-select:text;">
+                        		<label for="title">Title: </label>
+                        		<input 	type="text" 
+                        				name="title" 
+                        				id="title"/>
+                        		<br/>
+                        		<label for="name">Name: </label>
+                        		<input 	type="text" 
+                        				name="name" 
+                        				id="name"/>
+                        		<br/>
+                        		<label for="date">Date: </label>
+                        		<input type="text" name="date" id="date"/>
+
+                        </textarea>
+                        <div class="dot-line"></div>
+                        <button id="submitprayer" onclick="$('form').one('submit', function (e) {
+    e.preventDefault();
+    postprayer($('#text').val());
+    $('#submitprayer').attr('disabled', 'disabled');
+});">POST</button>
+
+                        <img src="images/universal.svg" alt="universal icon" />
+
+                        <input type="password" value="" name="password">
+                    </form>
+
+                    <div style="clear:both;"></div>
+
+                </div>
+            </div>
+<!-- end of new prayer block-->
+
+
+<div class="prayer-block universal-id logoff-message block-4">
+                <!-- universal block-->
+
+                <img class="display-pic" src="images/logoff-profile.svg" alt="display image" />
+
+
+                <p class="block-id"><span>LoGOFF</span><span> message:</span></p>
+
+                <p class="prayer-text"> Welcome to LoGOFF. Write the event you want to share.</p>
+
+
+                <div style="clear:both;"></div>
+
+            </div><!-- end of universal block-->
+
+
+
+
+
+<!-- <div class="prayer-block block-3"> -->
+<div class="prayer-block universal-id logoff-message block-4">
+	<img class="display-pic" src="images/logoff-profile.svg" alt="display image" />
+	<p class="block-id"><span id="name">Name</span><br />
+						<span id="date">Date/Time</span><br />
+						<span id="going">Going?</span>
+						<span>
+							<input type="radio" name="option" id="yes"/>
+							<label for="yes">Yes</label>
+							<input type="radio" name="option" id="no"/>
+							<label for="no">No</label>
+						</span><br />
+						<span id="tags">#tags</span>
+	</p>
+
+	<p class="prayer-text">Hack4missions!</p>
+	<hr />
+	<p style="text-align:right; margin:0% 5% 0% 0%;">Seen by 15 people</p>
+</div>
