@@ -8,7 +8,8 @@ var UserSchema = new mongoose.Schema({
 		type: Number,
 		required: true,
 		index: true
-	}
+	},
+	events: [mongoose.Schema.ObjectId]
 });
 
 UserSchema.hasMany('Event', {through: 'events'});

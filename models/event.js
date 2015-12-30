@@ -10,24 +10,15 @@ var EventSchema = new mongoose.Schema({
 		required: true,
 		index: true
 	},
-	datetime: {
-		type: Date
-	},
-	location: {
-		type: String
-	},
-	description: {
-		type: String
-	},
-	tags: {
-		type: [String]
-	},
-	created_at: {
-		type: Date
-	},
-	updated_at: {
-		type: Date
-	}
+	author: mongoose.Schema.ObjectId,
+	attendees: [mongoose.Schema.ObjectId],
+	discussions: [mongoose.Schema.ObjectId],
+	datetime: Date,
+	location: String,
+	description: String,
+	tags: [String],
+	created_at: Date,
+	updated_at: Date
 });
 
 EventSchema.belongsTo('User', {through: 'creator'});

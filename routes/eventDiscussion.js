@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-var EventDiscussion  require('../models/eventDiscussion.js');
+var EventDiscussion = require('../models/eventDiscussion.js');
 var User = require('../models/user.js');
 
 module.exports = router;
@@ -27,7 +27,9 @@ router.post('/create', function (req, res) {
 
 router.post('/update', function (req, res) {
 	res.setHeader('Content-Type', 'application/json');
-	EventDiscussion.findOneAndUpdate({_id: req.query._id}, req.body, {upsert: true}, function (err, ev) {
+	EventDiscussion.findOneAndUpdate({_id: req.query._id}, {
+		content: req.body.content
+	}, {upsert: true}, function (err, ev) {
 		if (err) console.log(err);
 		return res.send(ev);
 	});
