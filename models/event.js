@@ -10,7 +10,7 @@ var EventSchema = new mongoose.Schema({
 		required: true,
 		index: true
 	},
-	author: mongoose.Schema.ObjectId,
+	creator: mongoose.Schema.ObjectId,
 	attendees: [mongoose.Schema.ObjectId],
 	discussions: [mongoose.Schema.ObjectId],
 	datetime: Date,

@@ -27,6 +27,24 @@ app.use(function(req, res, next) {
  	next();
 });
 
+var User = require('./models/user.js');
+app.use(function(req, res, next) {
+	// really annoying but read in a userid param and "set" the session object's user
+	if (req.query.userid) {
+		User.findOrCreate({
+			userid: req.query.userid
+		}, function (err, user) {
+			if (err) console.log(err);
+			req.session.user = user;
+			console.log("Current User:");
+			console.log(user);
+			next();
+		});
+	} else {
+		next();
+	}
+});
+
 app.use('/events', require('./routes/events.js'));
 app.use('/users', require('./routes/users.js'));
 app.use('/discussions', require('./routes/eventDiscussion.js'));

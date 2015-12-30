@@ -1,6 +1,6 @@
 "use strict"
 var mongoose = require('mongoose');
-var User = require('./event')
+var Event = require('./event');
 require('mongo-relation');
 
 var UserSchema = new mongoose.Schema({
@@ -12,7 +12,7 @@ var UserSchema = new mongoose.Schema({
 	events: [mongoose.Schema.ObjectId]
 });
 
-UserSchema.hasMany('Event', {through: 'events'});
+UserSchema.hasMany('Event');
 
 UserSchema.statics.findOrCreate = function(params, cb) {
 	var schema = this;

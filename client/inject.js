@@ -37,14 +37,15 @@ $("body").on("click", ".h4m-link", function(){
 	loadPage($(this).attr('href'));
 });
 
+// link the current user to a user in our db
 $.ajax({
 	type: 'POST',
 	url: 'http://welogoff.com/Home/getProfileId',
 	success: function(userid) {
-		$.ajax({
+		/*$.ajax({
 			type: 'POST',
 			crossDomain: true,
-			url: 'https://logoff-h4m.herokuapp.com/users/setCurrent',
+			url: 'http://62def5c0.ngrok.com/users/setCurrent',
 			data: {
 				userid: userid
 			},
@@ -52,7 +53,7 @@ $.ajax({
 				console.log(user);
 			},
 			dataType: 'json'
-		});
+		});*/
 	}
 })
 
