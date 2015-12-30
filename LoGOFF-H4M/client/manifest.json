@@ -1,0 +1,19 @@
+{
+	"manifest_version": 2,
+
+	"name": "LoGOFF H4M",
+	"description": "Additions to LogOFF at Urbana 15 Hack4Missions",
+	"version": "1.0",
+
+	"content_scripts": [{
+		"js": ["script/jquery.js", "inject.js"],
+		"css": ["style/main.css"],
+		"matches": ["http://welogoff.com/*"]
+	}],
+
+	"web_accessible_resources": [
+		"views/*",
+		"style/*",
+		"script/*"
+	]
+}

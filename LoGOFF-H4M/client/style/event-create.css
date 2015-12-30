@@ -1,0 +1,98 @@
+#event-type {
+	background-color: white;
+    padding: 20px;
+   
+}
+#event-type {
+	font-size: 15px;
+	min-height: 30px
+}
+
+#invite-button {
+	background-color: grey;
+	text-align: center;
+	margin-right: 
+}
+
+#event-title {
+
+}
+
+#event-date{
+	display: inline-block;
+	padding-right: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#event-time{
+	display: inline-block;
+	padding-right: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#event-attendees{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#event-description{
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+/*Ashley's Modifications */
+.radio-list{
+	
+
+}
+ul.radio-list li{
+	list-style-type:none;
+	float: left;
+	margin-right: 10px;
+}
+
+ul.checkbox-list li{
+	list-style-type: none;
+}
+section{
+	margin: 15px 0;
+}
+.container{
+	width: 320px !important;
+	margin: 0px auto;
+	background: #fff;
+}
+body{
+	background: #f4f4f4;
+}
+button.left{
+	float:left;
+}
+button.right{
+	float: right;
+}
+
+/* Ashley's Modifications */
+
+
+#event-discussion-title{
+	text-align: center;
+	font-weight: bold;
+}
+
+#event-discussion{
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#event-description-about{
+
+}
+
+#event-tags{
+	padding-bottom: 5px;
+}
