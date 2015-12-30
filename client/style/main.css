@@ -9,3 +9,11 @@
     cursor: pointer;
     position: relative;
 }
+
+.create-event {
+	width: 100%;
+    float: left;
+    height: 80%;
+    cursor: pointer;
+    position: relative;
+}
