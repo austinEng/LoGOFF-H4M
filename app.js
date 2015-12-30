@@ -18,7 +18,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-console.log(config.cookie_secret);
 app.use(session({secret: config.setup.cookie_secret, saveUninitialized: true, resave: true}));
 
 app.use(function(req, res, next) {
