@@ -1,0 +1,11 @@
+.nav .feed-btn, .nav .partner-btn, .nav .profile-btn {
+	width: 25%;
+}
+
+.event-btn {
+    width: 25%;
+    float: left;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+}
