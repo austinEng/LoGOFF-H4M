@@ -33,14 +33,15 @@ router.get('/feed', function (req, res) {
 	var query = User.find({});
 	query.where('userid').in(ids);
 	query.exec(function (err, users) {
+
 		if (err) console.log(err);
-		var uids = []
+		var eids = []
 		for (var i = 0; i < users.length; i++) {
-			uids.push(users[i]._id);
+			eids = eids.concat(users[i].events);
 		}
-		query = Event.find({});
-		query.where('creator').in(uids);
-		query.exec(function (err, events) {
+		Event.find({
+			_id: {$in : eids}
+		}, function (err, events) {
 			if (err) console.log(err);
 			return res.send(JSON.stringify(events));
 		});
