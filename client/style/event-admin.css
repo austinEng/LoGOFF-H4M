@@ -1,0 +1,36 @@
+#event-header {
+	background-color: white;
+    padding: 20px;
+    min-height: 85px;
+}
+
+#event-image {
+	width: 80px;
+    float: left;
+    margin-right: 15px;
+}
+
+#event-image img {
+	width: 100%;
+}
+
+#event-title {
+	font-size: 30px;
+    font-weight: bold;
+}
+
+#invite-button {
+	background-color: purple;
+	text-align: center;
+	margin-right: 
+}
+
+#event-date{
+	display: inline-block;
+	padding: 0px, 100px;
+}
+
+#event-time{
+	display: inline-block;
+	padding: 0px, 100px;
+}
