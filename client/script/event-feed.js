@@ -66,12 +66,12 @@ $.ajax({
 		}
 
 
-		insertEventItem({
+		/*insertEventItem({
 			title: 'Hack4Missions Presentations',
 			location: 'Ferrara Theatre',
 			datetime: 'Today, 1:30 - 5:30',
 			description: 'Come see the awesome projects that the Hack4Missions teams have been working on!'
-		});
+		});*/
 
 		$('#create-event-form').on('submit', function (e) {
 			e.preventDefault();
