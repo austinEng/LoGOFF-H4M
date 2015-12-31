@@ -34,6 +34,9 @@ $(document).ready(function() {
 });
 
 $("body").on("click", ".h4m-link", function(){
+	if (window.location.pathname != '/') {
+		window.location = '/' + $(this).attr('href');
+	}
 	loadPage($(this).attr('href'));
 });
 
@@ -61,10 +64,11 @@ if (window.location.hash) {
 	loadPage(window.location.hash);
 }
 
+var eventIcon = chrome.extension.getURL("images/createEventIcon.png");
 var homeBtn = $('.nav > a')[0];
 var el = $("<a href='#event-feed' class='h4m-link'> \
 	<div class='event-btn'> \
-	<img  /> \
+	<img src='" + eventIcon + "'/> \
 	</div> \
 	</a>");
 el.insertAfter(homeBtn);

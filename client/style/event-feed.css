@@ -1,5 +1,116 @@
 .prayer-block {
-	padding: 30px 0px;
+	padding: 5px 0px;
+}
+
+#new-event {
+    width: calc(100% - 14px);
+    background-color: #e6e7e8;
+    margin: auto;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    min-height: 46px;
+    border-bottom: 0px solid #00a55e;
+    position: relative;
+}
+
+#new-event .green-line {
+    background-color: #00a55e;
+    height: 5px;
+    width: 0%;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+}
+
+#new-event-btn {
+    text-align: center;
+    width: 150px;
+    margin: auto;
+    color: white;
+    border-radius: 20px;
+    padding: 6px;
+    position: relative;
+    top: 7px;
+    background-color: #00a55e;
+    cursor: pointer;
+    height: 20px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#new-event-btn h2 {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0px;
+}
+
+#new-event-btn img {
+    height: 15px;
+    position: absolute;
+    left: 13px;
+    top: 8px;
+}
+
+#new-event .uni {
+    position: absolute;
+    z-index: 1;
+    height: 14px;
+    border-radius: 10px;
+    padding: 2px;
+    top: 1px;
+    left: 1px;
+    background-color: #e6e7e8;
+    display: none;
+}
+
+#new-event .display-pic {
+	height: 32px;
+    display: block;
+    padding: 7px;
+    position: absolute;
+    cursor: pointer;
+}
+
+#new-event .cancel-post {
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#new-event .wrapper {
+	display: none;
+	opacity: 0;
+}
+
+
+#new-event form {
+	margin-left: 50px;
+}
+
+#new-event label {
+	font-weight: bold;
+}
+
+#new-event button {
+	text-align: center;
+    width: 70px;
+    color: white;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 4px;
+    font-weight: 700;
+    background-color: #00a55e;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-right: 7px;
+    float: right;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .event-title {
@@ -16,4 +127,18 @@
 
 .event-desc {
     margin: 0px 15px 0px 50px;
+}
+
+.event-field {
+	width: calc(100% - 50px);
+    resize: none;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    background-color: transparent;
+    color: #323132;
+    border-bottom: 1px solid gray;
+}
+
+.event-btn {
+	background-color: #00a55e;
 }

@@ -29,7 +29,7 @@ $.ajax({
 				type: 'POST',
 				url: 'http://welogoff.com/Profile/GetMyFollowingList',
 				success: function (data) {
-					var ids = [];
+					var ids = [userid];
 					for (var i = 0; i < data.followinglist.length; i++) {
 						ids.push(data.followinglist[i][1]);	
 					}

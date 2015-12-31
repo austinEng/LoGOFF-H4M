@@ -13,7 +13,7 @@ var EventSchema = new mongoose.Schema({
 	creator: mongoose.Schema.ObjectId,
 	attendees: [mongoose.Schema.ObjectId],
 	discussions: [mongoose.Schema.ObjectId],
-	datetime: Date,
+	datetime: String,
 	location: String,
 	description: String,
 	tags: [String],

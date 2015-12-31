@@ -1,5 +1,68 @@
+<div id="new-event">
+    <div class="green-line"></div>
+
+    <img class="display-pic" src="images/display-image.svg" alt="display image" />
+    <img class="uni" src="images/universal-active.svg" alt="universal icon" />
+
+    <div id="new-event-btn">
+        <h2>CREATE EVENT</h2>
+        <img src="images/prayer-icon.svg" alt="prayer icon" />
+    </div>
+
+    <div class="wrapper">
+        <img class="cancel-post" src="images/cancel-icon-grey.svg" alt="cancel post" />
+        
+        <form id="create-event-form">
+            <table>
+                <tr>
+                <td><label for="title">Title: </label></td>
+                <td><input  type="text" class="event-field" 
+                            name="title" 
+                            id="title-field"/></td>
+                </tr>
+
+                <tr>
+                <td><label for="name">Location: </label></td>
+                <td><input  type="text" class="event-field" 
+                            name="location" 
+                            id="location-field"/></td>
+                </tr>
+
+                <tr>
+                <td><label for="date">Time: </label></td>
+                <td><input  type="text" class="event-field"
+                            name="datetime"
+                            id="datetime-field"/>
+                </td>
+                </tr>
+
+                <tr>
+                <td><label for="description">Description:</label></td>
+                <td><textarea 
+                        name="description"  class="event-field"
+                        id="description-field"
+                        cols="40"
+                        rows="4"></textarea></td>
+                </tr>
+
+                <tr>
+                <td><label for="tags">Tags: </label></td>
+                <td><input  type="text" class="event-field"
+                            name="tags"
+                            id="tags-field"/>
+                </td>
+                </tr>
+
+            </table>
+            <div class="dot-line"></div>
+            <button id="create-event-btn">CREATE</button>
+        </form>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<!--
 <div class="new-post" id="new-post-btn">
- <!--new prayer block-->
+
                 <div class="green-line"></div>
 
                 <img class="display-pic" src="images/display-image.svg" alt="display image" />
@@ -16,53 +79,41 @@
 
                     <p><span></span> <span>writes:</span></p>
                     <form style="margin:0% 0% 0% 10%; padding=0%">
-                       <!-- <textarea id="text" class="prayer-message-box" maxlength="160" style="-webkit-user-select:text;">
-                        </textarea> -->
+
                         		<table>
                         			<tr>
                         			<td><label for="title">Title: </label></td>
-                        			<td><input 	type="text" 
+                        			<td><input 	type="text" class="event-field" 
                         						name="title" 
                         						id="title"/></td>
                         			</tr>
-                        			<br/>
+
                         			<tr>
-                        			<td><label for="name">Name: </label></td>
-                        			<td><input 	type="text" 
-                        						name="name" 
-                        						id="name"/></td>
+                        			<td><label for="name">Location: </label></td>
+                        			<td><input 	type="text" class="event-field" 
+                        						name="location" 
+                        						id="location"/></td>
                         			</tr>
-                        			<br/>
+
                         			<tr>
-                        			<td><label for="date">Date: </label></td>
-                        			<td><input 	type="text"
-                        						name="month"
-                        						id="month"
-                        						style="width:15px; margin=0%"/>
-                        			</td>
-                        			<td><input 	type="text"
-                        						name="day"
-                        						id="day"
-                        						style="width:15px; margin=0%"/>
-                        			</td>
-                        			<td><input 	type="text"
-                        						name="year"
-                        						id="year"
-                        						style="width:15px; margin=0%"/>
+                        			<td><label for="date">Time: </label></td>
+                        			<td><input 	type="text" class="event-field"
+                        						name="datetime"
+                        						id="datetime"/>
                         			</td>
                         			</tr>
-                        			<br /><br/>
+
                         			<tr>
                         			<td><label for="description">Description:</label></td>
                         			<td><textarea 
-                        					name="description" 
+                        					name="description"  class="event-field"
                         					id="description"
                         					cols="40"
                         					rows="4">
-                        					Write here...
+                        					
                         				</textarea></td>
                         			</tr>
-                        			<br />
+
                         		</table>
                         <div class="dot-line"></div>
                         <button id="submitprayer" onclick="$('form').one('submit', function (e) {
@@ -80,6 +131,7 @@
 
                 </div>
             </div>
+-->
 <!-- end of new prayer block-->
 
 <!--

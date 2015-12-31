@@ -59,6 +59,7 @@ router.post('/create', function (req, res) {
 			description: req.body.description,
 			tags: req.body.tags
 		}, function (err, ev) {
+			if (err) console.log(err);
 			req.session.user.events.push(ev._id);
 			req.session.user.save(function (err) {
 				if (err) console.log(err);
