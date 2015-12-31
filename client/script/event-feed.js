@@ -5,7 +5,7 @@ $.ajax({
 	url: 'http://welogoff.com/Home/getProfileId',
 	success: function(userid) {
 		console.log('userid: ' + userid);
-		var domain = 'http://lvh.me:3000/'
+		var domain = ' https://logoff-h4m.herokuapp.com/';//'http://lvh.me:3000/'
 
 		
 		function insertEventItem(params) {
